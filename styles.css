@@ -1,0 +1,115 @@
+:root {
+    --bg: #f5f6f8;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --border: rgba(0, 0, 0, 0.08);
+    --text-main: #111;
+    --text-sub: #666;
+    --accent: #007aff;
+    --pip-top: #00bfa5;
+    --pip-bottom: #a8e6cf;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffffff 0%, #eef0f4 60%);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+}
+
+#container {
+    position: relative;
+    width: min(560px, 92%);
+    padding: 36px 34px 40px;
+    background: var(--card-bg);
+    backdrop-filter: blur(18px) saturate(160%);
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    text-align: center;
+}
+
+#top-left {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-sub);
+}
+
+#week-toggle {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 999px;
+}
+
+#week-toggle button {
+    border: none;
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#week-toggle button.active {
+    background: white;
+    color: var(--accent);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#main-line {
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+}
+
+#sub-line {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-sub);
+}
+
+#color-picker {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--text-sub);
+}
+
+#color-picker input[type="color"] {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+video {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
